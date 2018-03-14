@@ -5,20 +5,27 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public float speed;
-    public float hp;
+    public int hp;
 
     Vector3 direction;
 
 	// Use this for initialization
-	void Start () {
+	protected void Start () {
         direction = new Vector3(0, -1, 0)*speed;
         GetComponent<Rigidbody2D>().velocity = direction;
     }
 	
-	// Update is called once per frame
-	void Update () {
-      
-	}
+
+    protected virtual void die()
+    {
+        Destroy(gameObject);
+    }
+
+   public void getDamage(int dmg){
+        hp -= dmg;
+        if (hp < 0) die();
+    }
+
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -26,5 +33,10 @@ public class Enemy : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+        if (col.gameObject.tag == "Bullet")
+        {
+            GetComponent<Rigidbody2D>().velocity = direction = new Vector3(0, -1, 0) * speed; ;
+        }
+
     }
 }

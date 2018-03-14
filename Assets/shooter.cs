@@ -9,11 +9,15 @@ public class shooter : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void shoot (Vector2 speed) {
-        timeLastShoot += Time.deltaTime;
         if (timeLastShoot > cooldown){
             GameObject newbullet = Instantiate(bullet, transform.position, transform.rotation);
             newbullet.GetComponent<Bullet>().init(speed);
             timeLastShoot -= cooldown;
         }
+    }
+
+    public void Update()
+    {
+        timeLastShoot += Time.deltaTime;
     }
 }

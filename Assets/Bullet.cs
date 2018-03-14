@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
     private Vector2 speed;
     public float verticalSpeed;
     public float maxHorizontalSpeed;
+    public int dmg;
 
     float initialVel;
 
@@ -27,8 +28,11 @@ public class Bullet : MonoBehaviour {
         }
         if (col.gameObject.tag == "Enemy")
         {
-            Vector2 contact = col.contacts[0].normal;
+           // Vector2 contact = col.contacts[0].normal;
             GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity.normalized * initialVel;
+            col.gameObject.GetComponent<Enemy>().getDamage(dmg);
+            dmg += (dmg / 2);
+            GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color - new Color(0, 0.3f, 0.3f, 0);
         }
     }
 

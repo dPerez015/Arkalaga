@@ -16,7 +16,8 @@ public class movementPlayer : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         rb.velocity = new Vector2(speed, 0) * Input.GetAxis("Horizontal");
-        shooter.shoot(rb.velocity);
+        if(Input.GetKeyDown(KeyCode.Space))
+            shooter.shoot(rb.velocity);
         
 	}
 }

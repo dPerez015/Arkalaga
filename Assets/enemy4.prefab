@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1201770751568458}
+  m_RootGameObject: {fileID: 1747195950780906}
   m_IsPrefabParent: 1
---- !u!1 &1201770751568458
+--- !u!1 &1747195950780906
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4167543768176084}
-  - component: {fileID: 212282726111996664}
-  - component: {fileID: 114009684807822318}
-  - component: {fileID: 58068123638508488}
-  - component: {fileID: 50082022544500650}
-  m_Layer: 8
-  m_Name: Bullet
-  m_TagString: Bullet
+  - component: {fileID: 4632433201399300}
+  - component: {fileID: 212574697496040254}
+  - component: {fileID: 50283926607340822}
+  - component: {fileID: 58467058807111974}
+  - component: {fileID: 114827821688373864}
+  m_Layer: 10
+  m_Name: enemy4
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4167543768176084
+--- !u!4 &4632433201399300
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201770751568458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9352293, y: -0.7469604, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.05145245}
+  m_GameObject: {fileID: 1747195950780906}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0.51, y: 3.07, z: 0}
+  m_LocalScale: {x: 0.11792928, y: 0.117929295, z: 0.23585859}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50082022544500650
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!50 &50283926607340822
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201770751568458}
-  m_BodyType: 0
+  m_GameObject: {fileID: 1747195950780906}
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -62,13 +62,13 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &58068123638508488
+  m_Constraints: 0
+--- !u!58 &58467058807111974
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201770751568458}
+  m_GameObject: {fileID: 1747195950780906}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -77,27 +77,29 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &114009684807822318
+  m_Radius: 3.84
+--- !u!114 &114827821688373864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201770751568458}
+  m_GameObject: {fileID: 1747195950780906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d64698374a567f146b513694dab5f010, type: 3}
+  m_Script: {fileID: 11500000, guid: c9829bc27bba3ee41b94b484c18e8b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalSpeed: 6
-  maxHorizontalSpeed: 5
-  dmg: 1
---- !u!212 &212282726111996664
+  speed: 0.8
+  hp: 5
+  bullet: {fileID: 1201770751568458, guid: 31b514c62f4c6c1499b9b51475da412d, type: 2}
+  minBullets: 4
+  maxBullets: 8
+--- !u!212 &212574697496040254
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201770751568458}
+  m_GameObject: {fileID: 1747195950780906}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -127,11 +129,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a529348cb394a44da3be465c999e6ef, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.328, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.68, y: 7.68}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

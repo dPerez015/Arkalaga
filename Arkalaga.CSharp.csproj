@@ -287,9 +287,12 @@
   <ItemGroup>
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\EnemyExploding.cs" />
     <Compile Include="Assets\EnemySpawner.cs" />
     <Compile Include="Assets\movementPlayer.cs" />
+    <Compile Include="Assets\RotatingEnemy.cs" />
     <Compile Include="Assets\shooter.cs" />
+    <Compile Include="Assets\SpawnerShaped.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
